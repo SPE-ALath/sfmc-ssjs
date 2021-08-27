@@ -6,7 +6,7 @@
 	
 	try {
 		var obj = Platform.function.LookupRows('ENT.CA-520000847-ISG-Language',['LanguageKey']);
-		Write(stringify(obj));
+		Write(Stringify(obj));
 	}
 	catch(e) {
 	}
