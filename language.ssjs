@@ -57,10 +57,7 @@
           "ContentType": "queryactivity"
         };
         debug(config);
-        // var createResult = prox.createItem("DataFolder", config);
-        
-        
-        
+       
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
         
