@@ -29,7 +29,6 @@
         debug(data);
         
         var QueryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
-        //debug(QueryFolder);
        
   
     } catch(e){
