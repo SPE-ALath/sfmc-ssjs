@@ -29,16 +29,19 @@
         
         // var subKey = 'something@example.com';
         
-        var deCustKey = 'CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
-        // var props = { QueryAllAccounts: true };
+        var deCustKey = 'ENT.CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
+        var props = { QueryAllAccounts: true };
         var cols = ["LanguageID","LanguageName","LanguageKey"];
         var filter = {
             Property: "LU",
             SimpleOperator: "equals",
             Value: 1
         };
+        var opts = {
+            BatchSize: 25
+        };
 
-        var desc = prox.retrieve("DataExtensionObject[" + deCustKey + "]", cols, filter);
+        var desc = prox.retrieve("DataExtensionObject[" + deCustKey + "]", cols, filter, opts, props);
         debug(desc);
   
     } catch(e){
