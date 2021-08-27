@@ -49,14 +49,15 @@
         
         var config = {
           "Name": "english",
-          "Description": "",
+          "Description": "english",
           "ParentFolder": {
               ID : data.Results[0].ID,
               IDSpecified: true
           },
           "ContentType": "queryactivity"
         };
-        var createResult = prox.createItem("DataFolder", config);
+        debug(config);
+        // var createResult = prox.createItem("DataFolder", config);
         
         
         
