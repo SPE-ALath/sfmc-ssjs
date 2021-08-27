@@ -29,6 +29,25 @@
         var data = prox.retrieve("DataFolder", cols, filter);
         debug(data);
         
+        parentFolderID = 0;
+        prox = new Script.Util.WSProxy();
+        cols = [ "Name","ContentType","ID","CustomerKey"];
+        filter = {
+           LeftOperand: {
+              Property: "ParentFolder.ID", 
+              SimpleOperator: "equals", 
+              Value: parentFolderID
+           },
+           LogicalOperator: "AND",
+           RightOperand: {
+              Property: "ContentType", 
+              SimpleOperator: "equals", 
+              Value: 'queryactivity'
+           }
+        };
+        data = prox.retrieve("DataFolder", cols, filter);
+        debug(data);
+        
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
         
