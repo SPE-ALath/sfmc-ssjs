@@ -28,8 +28,8 @@
         var data = prox.retrieve("DataFolder", cols, filter);
         debug(data);
         
-        var QueryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
-        debug(QueryFolder);
+        var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
+        debug(queryFolder);
         
     } catch(e){
         // workaround for Thread Abort Exception from redirect
