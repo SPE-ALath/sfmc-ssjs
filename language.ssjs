@@ -28,7 +28,7 @@
         debug(data);
         
         // var subKey = 'something@example.com';
-        var deCustKey = 'ENT.CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
+        var deCustKey = 'CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
 
         var cols = ["LanguageID","LanguageName","LanguageKey"];
         var filter = {
