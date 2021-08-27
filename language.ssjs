@@ -6,6 +6,7 @@
         
         debugMode = ['html'];
         
+        
         var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
         debug(obj);
         var parentFolderID = 0;
