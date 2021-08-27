@@ -46,13 +46,13 @@
            }
         };
         data = prox.retrieve("DataFolder", cols, filter);
-        debug(data[0].ID);
+        debug(data.Results[0].ID);
         
         var config = {
           "Name": "english",
           "Description": "",
           "ParentFolder": {
-              ID : data[0].ID,
+              ID : data.Results[0].ID,
               IDSpecified: true
           },
           "ContentType": "queryactivity"
@@ -61,7 +61,7 @@
         // Create Folder and store the result in createResult var    
         var createResult = prox.createItem("DataFolder", config);
 
-        Platform.Function.Stringify(createResult.Results[0].NewID);
+        // Platform.Function.Stringify(createResult.Results[0].NewID);
         
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
