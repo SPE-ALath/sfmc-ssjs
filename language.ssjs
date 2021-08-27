@@ -30,7 +30,6 @@
         
         var QueryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(QueryFolder);
-        var ParentQueryFolderID = QueryFolder[0].ID;
         
        
   
