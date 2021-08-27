@@ -5,6 +5,8 @@
 	Platform.function.ContentBlockByKey("email360-ssjs-lib");
 	
 	try {
+		var obj = Platform.function.LookupRows('CA-520000847-ISG-Language',['LanguageKey'],[1]);
+		Write(stringify(obj));
 	}
 	catch(e) {
 	}
