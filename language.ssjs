@@ -46,18 +46,9 @@
            }
         };
         data = prox.retrieve("DataFolder", cols, filter);
-        debug(data[0]['ID']);
+        debug(data.Results[0]);
         
-        var config = {
-          "Name": "english",
-          "Description": "",
-          "ParentFolder": {
-              ID : data[0]['ID'],
-              IDSpecified: true
-          },
-          "ContentType": "queryactivity"
-        };
-        var createResult = prox.createItem("DataFolder", config);
+        
         
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
