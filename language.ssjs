@@ -46,7 +46,7 @@
            }
         };
         data = prox.retrieve("DataFolder", cols, filter);
-        debug(data);
+        debug(data[0].ID);
         
         var config = {
           "Name": "english",
