@@ -50,13 +50,14 @@
         var config = {
           "Name": "english",
           "Description": "english",
-          "ParentFolder": {
-              ID : data.Results[0].ID,
-              IDSpecified: true
-          },
-          "ContentType": "queryactivity"
+          "ParentFolderID": data.Results[0].ID,
+          "ContentType": "queryactivity",
+          "IsActive" : "true",
+          "IsEditable" : "true",
+          "AllowChildren" : "true"
         };
         debug(config);
+        var createResult = Folder.Add(config);
        
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
