@@ -3,8 +3,11 @@
     Platform.Function.ContentBlockByKey('email360-ssjs-lib');
 
     try{
+        
+        debugMode = ['console','html'];
+        
       var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
-      Write(Stringify(obj));
+      debug(obj);
   
     } catch(e){
         // workaround for Thread Abort Exception from redirect
