@@ -5,7 +5,7 @@
 	Platform.function.ContentBlockByKey("email360-ssjs-lib");
 	
 	
-		var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language');
+		var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language','LanguageID',1);
 		Write(Stringify(obj));
 	
 </script>
