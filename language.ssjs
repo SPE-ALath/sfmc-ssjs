@@ -7,7 +7,7 @@
         debugMode = ['html'];
         
         var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
-        debug(obj);
+        //debug(obj);
         var parentFolderID = 0;
         var prox = new Script.Util.WSProxy();
         var cols = [ "Name","ContentType","ID","CustomerKey"];
@@ -25,7 +25,7 @@
            }
         };
         var data = prox.retrieve("DataFolder", cols, filter);
-        debug(data);
+        //debug(data);
         
         // var subKey = 'something@example.com';
         
