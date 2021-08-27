@@ -2,7 +2,7 @@
 	Platform.Load("Core", "1.1.1");
 	
 	// Load SSJS Library
-	Platform.function.ContentBlockByKey("email360-ssjs-lib");
+	Platform.Function.ContentBlockByKey("email360-ssjs-lib");
 	
 	
 		var obj = Platform.Function.LookupRows('SSJS Lib Demo DE',['Boolean'],[0]);
