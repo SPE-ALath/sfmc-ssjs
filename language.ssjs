@@ -46,13 +46,13 @@
            }
         };
         data = prox.retrieve("DataFolder", cols, filter);
-        debug(data.Results[0].ID);
+        debug(data[0]['ID']);
         
         var config = {
           "Name": "english",
           "Description": "",
           "ParentFolder": {
-              ID : data.Results[0].ID,
+              ID : data[0]['ID'],
               IDSpecified: true
           },
           "ContentType": "queryactivity"
