@@ -29,8 +29,8 @@
         debug(data);
         
         var QueryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
-       
-  
+        debug(QueryFolder);
+        
     } catch(e){
         // workaround for Thread Abort Exception from redirect
         var desc = e.description; //Pulls the description from error object
