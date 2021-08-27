@@ -4,7 +4,7 @@
 
     try{
         
-        debugMode = ['html'];
+        debugMode = ['console'];
         
         var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
         debug(obj);
