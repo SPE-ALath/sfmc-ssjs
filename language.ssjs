@@ -46,7 +46,7 @@
            }
         };
         data = prox.retrieve("DataFolder", cols, filter);
-        debug(data.Results[0]);
+        debug(data[0]);
         
         
         
