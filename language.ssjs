@@ -4,7 +4,7 @@
 
     try{
         
-        debugMode = ['console'];
+        debugMode = ['html'];
         
         var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
         debug(obj);
@@ -28,7 +28,7 @@
         debug(data);
         
         var QueryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
-        debug(Stringify(QueryFolder));
+        debug(QueryFolder);
         // var ParentQueryFolderID = QueryFolder[0].ID;
         
        
