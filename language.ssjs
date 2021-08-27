@@ -26,6 +26,19 @@
         };
         var data = prox.retrieve("DataFolder", cols, filter);
         debug(data);
+        
+        // var subKey = 'something@example.com';
+        var deCustKey = 'ENT.CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
+
+        var cols = ["Field1","Field2","Field3","Field4"];
+        var filter = {
+            Property: "LU",
+            SimpleOperator: "equals",
+            Value: 1
+        };
+
+        var desc = prox.retrieve("DataExtensionObject[" + deCustKey + "]", cols, filter);
+        debug(desc);
   
     } catch(e){
         // workaround for Thread Abort Exception from redirect
