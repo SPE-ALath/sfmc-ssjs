@@ -7,7 +7,7 @@
         debugMode = ['html'];
         
         var obj = Platform.Function.LookupRows('ENT.CA-520000847-ISG-Language',['LU'],['1']);
-        //debug(obj);
+        debug(obj);
         var parentFolderID = 0;
         var prox = new Script.Util.WSProxy();
         var cols = [ "Name","ContentType","ID","CustomerKey"];
@@ -25,24 +25,8 @@
            }
         };
         var data = prox.retrieve("DataFolder", cols, filter);
-        //debug(data);
-        
-        // var subKey = 'something@example.com';
-        
-        var deCustKey = 'ENT.CA-520000847-ISG-Language'; //your DE's CustomerKey / External Key
-        var props = { QueryAllAccounts: true };
-        var cols = ["LanguageID","LanguageName","LanguageKey"];
-        var filter = {
-            Property: "LU",
-            SimpleOperator: "equals",
-            Value: 1
-        };
-        var opts = {
-            BatchSize: 25
-        };
-
-        var desc = prox.retrieve("DataExtensionObject[" + deCustKey + "]", cols, filter, opts, props);
-        debug(desc);
+        debug(data);
+       
   
     } catch(e){
         // workaround for Thread Abort Exception from redirect
