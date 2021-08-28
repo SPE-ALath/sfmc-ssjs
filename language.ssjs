@@ -112,6 +112,5 @@
         };
         data = prox.retrieve("DataFolder", cols, filter);
         debug(data);
-       
     }
 </script>
