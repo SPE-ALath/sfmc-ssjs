@@ -112,6 +112,7 @@
         };
         data = prox.retrieve("DataFolder", cols, filter);
         debug(data);
+        return data;
         for(var i=0;i<data.Results.length;i++)
         {
             if(data.Results[i].ParentFolder.ID == parentFolderID)
