@@ -63,29 +63,7 @@
         };
         parentData = prox.retrieve("DataFolder", cols, filter);
         
-        cols = [ "Name","ContentType","ID","CustomerKey"];
-        filter = {
-           LeftOperand: {
-              Property: "ParentFolder.Name", 
-              SimpleOperator: "equals", 
-              Value: 'english'
-           },
-           LogicalOperator: "AND",
-           RightOperand: {
-              Property: "ContentType", 
-              SimpleOperator: "equals", 
-              Value: 'queryactivity'
-           }
-        };
-        data = prox.retrieve("DataFolder", cols, filter);
-        
-        for(var i=0;i<data.Results.length;i++)
-        {
-            if(data.Results[i].ID == parentData.Results[0].ID)
-            {
-                debug(data.Results[i]);
-            }
-        }
+        debug(checkIfFolderExist(parentData.Results[0].ID,"english","queryactivity"));
         
         var config = {
           "Name": "english",
@@ -114,5 +92,33 @@
                 errorDebug: Platform.Function.Stringify(e)
             });
         }
+    }
+
+    function checkIfFolderExist(parentFolderID,folderName,contentType){
+        var prox = new Script.Util.WSProxy();
+        cols = [ "ID"];
+        filter = {
+           LeftOperand: {
+              Property: "ParentFolder.Name", 
+              SimpleOperator: "equals", 
+              Value: folderName
+           },
+           LogicalOperator: "AND",
+           RightOperand: {
+              Property: "ContentType", 
+              SimpleOperator: "equals", 
+              Value: contentType
+           }
+        };
+        data = prox.retrieve("DataFolder", cols, filter);
+        
+        for(var i=0;i<data.Results.length;i++)
+        {
+            if(data.Results[i].ID == parentFolderID)
+            {
+                return data.Results[i].ID;
+            }
+        }
+        return null;
     }
 </script>
