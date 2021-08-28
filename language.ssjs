@@ -47,6 +47,22 @@
         };
         data = prox.retrieve("DataFolder", cols, filter);
         
+        cols = [ "Name","ContentType","ID","CustomerKey"];
+        filter = {
+           LeftOperand: {
+              Property: "ParentFolder.ID", 
+              SimpleOperator: "equals", 
+              Value: parentFolderID
+           },
+           LogicalOperator: "AND",
+           RightOperand: {
+              Property: "ContentType", 
+              SimpleOperator: "equals", 
+              Value: 'queryactivity'
+           }
+        };
+        data = prox.retrieve("DataFolder", cols, filter);
+        
         var config = {
           "Name": "english",
           "Description": "english",
@@ -57,7 +73,7 @@
           "AllowChildren" : "true"
         };
         debug(config);
-        var createResult = Folder.Add(config);
+        // var createResult = Folder.Add(config);
        
         var queryFolder = Folder.Retrieve({Property:"ContentType",SimpleOperator:"equals",Value:"queryactivity"});
         debug(queryFolder);
