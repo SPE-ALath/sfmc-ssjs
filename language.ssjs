@@ -61,12 +61,36 @@
               Value: 'queryactivity'
            }
         };
+        parentData = prox.retrieve("DataFolder", cols, filter);
+        
+        cols = [ "Name","ContentType","ID","CustomerKey"];
+        filter = {
+           LeftOperand: {
+              Property: "ParentFolder.Name", 
+              SimpleOperator: "equals", 
+              Value: 'english'
+           },
+           LogicalOperator: "AND",
+           RightOperand: {
+              Property: "ContentType", 
+              SimpleOperator: "equals", 
+              Value: 'queryactivity'
+           }
+        };
         data = prox.retrieve("DataFolder", cols, filter);
+        
+        for(var i=0;i<data.Results.length;i++)
+        {
+            if(data.Results[i].ID == parentData.Results[0].ID)
+            {
+                debug(data.Results[i]);
+            }
+        }
         
         var config = {
           "Name": "english",
           "Description": "english",
-          "ParentFolderID": data.Results[0].ID,
+          "ParentFolderID": parentData.Results[0].ID,
           "ContentType": "queryactivity",
           "IsActive" : "true",
           "IsEditable" : "true",
