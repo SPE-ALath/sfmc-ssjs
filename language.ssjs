@@ -96,7 +96,7 @@
 
     function checkIfFolderExist(parentFolderID,folderName,contentType){
         var prox = new Script.Util.WSProxy();
-        cols = [ "ID","ParentFolderID"];
+        cols = [ "ID","ParentFolder.ID"];
         filter = {
            LeftOperand: {
               Property: "ParentFolder.Name", 
