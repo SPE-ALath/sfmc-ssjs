@@ -99,7 +99,7 @@
         cols = [ "ID","ParentFolder.ID"];
         filter = {
            LeftOperand: {
-              Property: "ParentFolder.Name", 
+              Property: "Name", 
               SimpleOperator: "equals", 
               Value: folderName
            },
